@@ -4,6 +4,7 @@
 #include "bulletmlcommon.h"
 
 #include <stdexcept>
+#include <cassert>
 #include <string>
 
 /// さすがにもうちょっと充実させんとねえ
@@ -13,18 +14,27 @@ public:
     BulletMLError(const std::string &msg) : std::runtime_error(msg) {
     }
 
-    static void doAssert(const char *str) { throw BulletMLError(str); }
-    static void doAssert(const std::string &str) { throw BulletMLError(str); }
+    static void doAssert(const char *str) {
+        assert(false);
+//        throw BulletMLError(str);
+    }
+
+    static void doAssert(const std::string &str) {
+        assert(false);
+//        throw BulletMLError(str);
+    }
 
     static void doAssert(bool t, const char *str) {
         if (!t) {
-            throw BulletMLError(str);
+            assert(false);
+//            throw BulletMLError(str);
         }
     }
     
     static void doAssert(bool t, const std::string &str) {
         if (!t) {
-            throw BulletMLError(str);
+            assert(false);
+//            throw BulletMLError(str);
         }
     }
 };

@@ -37,7 +37,8 @@ void BulletMLParserTinyXML::parse() {
 
 void BulletMLParserTinyXML::parseImpl(TiXmlDocument *doc) {
     if (doc->Error()) {
-        throw BulletMLError(doc->Value() + ": " + doc->ErrorDesc());
+        assert(false);
+//        throw BulletMLError(doc->Value() + ": " + doc->ErrorDesc());
     }
 
     TiXmlNode *node;

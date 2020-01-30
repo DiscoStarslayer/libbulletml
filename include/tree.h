@@ -43,7 +43,7 @@ public:
     virtual ~TreeNode();
 
     void addChild(TC *c) {
-        c->setParent(dynamic_cast<TC *>(this));
+        c->setParent((TC *) this);
         m_children.push_back(c);
     }
 
